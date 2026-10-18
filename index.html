@@ -60,9 +60,10 @@
     border-radius:var(--radius); overflow:hidden; transition:transform .18s, border-color .18s, box-shadow .18s;
   }
   .game:hover,.game:focus-visible{transform:translateY(-5px); border-color:var(--accent); box-shadow:0 14px 34px rgba(0,0,0,.45), 0 0 0 1px var(--accent-soft); outline:none;}
-  .art{height:170px; position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden;}
-  .art svg{width:100%; height:100%; transition:transform .35s;}
-  .game:hover .art svg{transform:scale(1.06);}
+  .art{aspect-ratio:1312/784; position:relative; overflow:hidden; background:#10294a;}
+  .art img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .45s;}
+  .game:hover .art img{transform:scale(1.05);}
+  .art img.fit{object-fit:contain; background:linear-gradient(#13294a,#1f3759);}
   .body{padding:18px 20px 20px; display:flex; flex-direction:column; gap:10px; flex:1;}
   .title-row{display:flex; align-items:center; justify-content:space-between; gap:10px;}
   .game h2{font-family:'Space Grotesk',sans-serif; font-size:23px; margin:0;}
@@ -124,16 +125,7 @@
     <!-- Merchants -->
     <a class="game" href="https://simple-games-dev.github.io/merchants/" data-t="strategy" data-name="Gem Merchants">
       <span class="badge-new">NEW</span>
-      <div class="art" style="background:radial-gradient(circle at 50% 120%,#3a2a0e,#122A46 70%)">
-        <svg viewBox="0 0 320 170" aria-hidden="true">
-          <g transform="translate(70 36) rotate(-8 30 45)"><rect width="62" height="88" rx="6" fill="#F2EEE2"/><rect width="62" height="22" rx="6" fill="#2f6fd0"/><text x="9" y="18" font-size="16" font-weight="700" fill="#fff" font-family="Space Grotesk">3</text><circle cx="48" cy="11" r="7" fill="none" stroke="#fff" stroke-width="2"/><circle cx="14" cy="76" r="7" fill="#E0483E"/><circle cx="14" cy="58" r="7" fill="#2FB36B"/><circle cx="32" cy="76" r="7" fill="#EEF1F6" stroke="#999"/></g>
-          <g transform="translate(130 28) rotate(6 30 45)"><rect width="62" height="88" rx="6" fill="#F2EEE2"/><rect width="62" height="22" rx="6" fill="#c4382f"/><text x="9" y="18" font-size="16" font-weight="700" fill="#fff" font-family="Space Grotesk">2</text><circle cx="48" cy="11" r="7" fill="none" stroke="#fff" stroke-width="2"/><circle cx="14" cy="76" r="7" fill="#3A3F4B"/><circle cx="14" cy="58" r="7" fill="#3B82F6"/></g>
-          <circle cx="222" cy="112" r="22" fill="#E8B93D" stroke="#fff" stroke-opacity=".6" stroke-width="3"/><path d="M222 99l4 9 9 1-7 6 2 10-8-5-8 5 2-10-7-6 9-1z" fill="#6b4a00"/>
-          <circle cx="250" cy="76" r="17" fill="#2FB36B" stroke="#fff" stroke-opacity=".6" stroke-width="3"/>
-          <circle cx="208" cy="60" r="15" fill="#E0483E" stroke="#fff" stroke-opacity=".6" stroke-width="3"/>
-          <circle cx="48" cy="120" r="14" fill="#3B82F6" stroke="#fff" stroke-opacity=".6" stroke-width="3"/>
-        </svg>
-      </div>
+      <div class="art"><img src="images/merchants.jpg" alt="Gem Merchants cards and gems" width="1312" height="784" loading="lazy"></div>
       <div class="body">
         <div class="title-row"><h2>Gem Merchants</h2><span class="players"><svg viewBox="0 0 16 16"><circle cx="8" cy="5" r="3"/><path d="M2 14c0-3 3-5 6-5s6 2 6 5z"/></svg>2–4</span></div>
         <p>Collect gems, buy cards that discount your next purchase, and lure nobles to your court. First to 15 prestige triggers the final round.</p>
@@ -144,20 +136,7 @@
 
     <!-- Ascent -->
     <a class="game" href="https://simple-games-dev.github.io/ascent-game/" data-t="strategy 3d" data-name="Ascent">
-      <div class="art" style="background:radial-gradient(circle at 50% 120%,#14456d,#122A46 70%)">
-        <svg viewBox="0 0 320 170" aria-hidden="true">
-          <g stroke="#0B1E33" stroke-width="2" stroke-linejoin="round">
-            <path d="M80 128l40-20 40 20-40 20z" fill="#e9e4d8"/><path d="M80 128v-14l40 20v14z" fill="#b9b3a3"/><path d="M160 128v-14l-40 20v14z" fill="#8f8a7c"/>
-            <path d="M140 108l40-20 40 20-40 20z" fill="#e9e4d8"/><path d="M140 108v-26l40 20v26z" fill="#b9b3a3"/><path d="M220 108V82l-40 20v26z" fill="#8f8a7c"/>
-            <path d="M140 82l40-20 40 20-40 20z" fill="#e9e4d8"/><path d="M140 82V68l40 20v14z" fill="#b9b3a3" opacity="0"/>
-            <path d="M140 82l40-20 40 20-40 20z" fill="#f4efe2"/><path d="M140 82v-26l40 20v26z" fill="#b9b3a3"/><path d="M220 82V56l-40 20v26z" fill="#8f8a7c"/>
-            <path d="M140 56l40-20 40 20-40 20z" fill="#E8A33D"/>
-          </g>
-          <ellipse cx="180" cy="38" rx="9" ry="4" fill="#0B1E33" opacity=".35"/>
-          <path d="M180 14c6 0 9 5 9 10 0 4-2 7-4 9h-10c-2-2-4-5-4-9 0-5 3-10 9-10z" fill="#E1604A"/><ellipse cx="180" cy="34" rx="9" ry="3.5" fill="#E1604A"/>
-          <path d="M112 100c5 0 8 4 8 9 0 3-2 6-4 8h-8c-2-2-4-5-4-8 0-5 3-9 8-9z" fill="#3FBF8F"/>
-        </svg>
-      </div>
+      <div class="art"><img src="images/ascent.jpg" alt="Ascent tower board" width="1312" height="784" loading="lazy"></div>
       <div class="body">
         <div class="title-row"><h2>Ascent</h2><span class="players"><svg viewBox="0 0 16 16"><circle cx="8" cy="5" r="3"/><path d="M2 14c0-3 3-5 6-5s6 2 6 5z"/></svg>2–3</span></div>
         <p>Climb three storeys or be the last builder standing. Move, build, and out-think your rivals on a shifting 3D tower.</p>
@@ -168,21 +147,7 @@
 
     <!-- Hedgerow -->
     <a class="game" href="https://simple-games-dev.github.io/hedgerow/" data-t="strategy 3d" data-name="Hedgerow">
-      <div class="art" style="background:radial-gradient(circle at 50% 120%,#12503a,#122A46 70%)">
-        <svg viewBox="0 0 320 170" aria-hidden="true">
-          <g stroke="#2E5C82" stroke-width="1.5" fill="#173a5c">
-            <path d="M60 130l50-26h100l50 26z"/>
-          </g>
-          <g stroke="#2E5C82" stroke-width="1.2" opacity=".8">
-            <path d="M85 117l40-13M110 130l50-26M150 130l40-26M190 130l35-26M235 130l10-13"/>
-            <path d="M72 124h176M98 111h124"/>
-          </g>
-          <rect x="130" y="100" width="64" height="12" rx="6" fill="#2FB36B" stroke="#0e5a37" stroke-width="2"/>
-          <rect x="190" y="110" width="12" height="28" rx="6" fill="#2FB36B" stroke="#0e5a37" stroke-width="2" transform="translate(-30 -4)"/>
-          <g><ellipse cx="120" cy="128" rx="14" ry="5" fill="#000" opacity=".3"/><path d="M120 92c7 0 11 5 11 10 0 4-3 7-6 9l5 14h-20l5-14c-3-2-6-5-6-9 0-5 4-10 11-10z" fill="#E1604A"/></g>
-          <g><ellipse cx="206" cy="108" rx="11" ry="4" fill="#000" opacity=".3"/><path d="M206 76c6 0 9 4 9 8 0 3-2 6-5 8l4 11h-16l4-11c-3-2-5-5-5-8 0-4 3-8 9-8z" fill="#5DADE2"/></g>
-        </svg>
-      </div>
+      <div class="art"><img src="images/hedgerow.jpg" alt="Hedgerow board with hedges" width="1312" height="784" loading="lazy"></div>
       <div class="body">
         <div class="title-row"><h2>Hedgerow</h2><span class="players"><svg viewBox="0 0 16 16"><circle cx="8" cy="5" r="3"/><path d="M2 14c0-3 3-5 6-5s6 2 6 5z"/></svg>2–4</span></div>
         <p>Race your pawn across the garden — or grow hedges to wall your rivals in. Drag hedges onto the board, but never trap anyone completely.</p>
@@ -193,21 +158,7 @@
 
     <!-- Ghosts -->
     <a class="game" href="https://simple-games-dev.github.io/ghosts/" data-t="strategy hidden 3d" data-name="Ghosts">
-      <div class="art" style="background:radial-gradient(circle at 50% 120%,#3b2a63,#122A46 70%)">
-        <svg viewBox="0 0 320 170" aria-hidden="true">
-          <g opacity=".9">
-            <path d="M112 128V74c0-20 14-34 32-34s32 14 32 34v54l-10-9-11 9-11-9-11 9-11-9z" fill="#E9E4D8"/>
-            <circle cx="132" cy="76" r="5.5" fill="#0B1E33"/><circle cx="156" cy="76" r="5.5" fill="#0B1E33"/><ellipse cx="144" cy="92" rx="5" ry="6.5" fill="#0B1E33"/>
-          </g>
-          <g opacity=".55">
-            <path d="M200 134V96c0-14 10-24 22-24s22 10 22 24v38l-7-6-7 6-8-6-7 6-7-6z" fill="#B98CE0"/>
-            <circle cx="214" cy="98" r="3.5" fill="#0B1E33"/><circle cx="230" cy="98" r="3.5" fill="#0B1E33"/>
-          </g>
-          <g opacity=".35"><path d="M60 140v-26c0-10 7-17 15-17s15 7 15 17v26l-5-4-5 4-5-4-5 4z" fill="#9FB3C8"/></g>
-          <text x="248" y="60" font-size="34" font-weight="700" fill="#E8A33D" font-family="Space Grotesk" opacity=".85">?</text>
-          <text x="52" y="82" font-size="22" font-weight="700" fill="#E8A33D" font-family="Space Grotesk" opacity=".5">?</text>
-        </svg>
-      </div>
+      <div class="art"><img src="images/ghosts.jpg" alt="Ghosts" width="1312" height="784" loading="lazy"></div>
       <div class="body">
         <div class="title-row"><h2>Ghosts</h2><span class="players"><svg viewBox="0 0 16 16"><circle cx="8" cy="5" r="3"/><path d="M2 14c0-3 3-5 6-5s6 2 6 5z"/></svg>2</span></div>
         <p>Each side fields good and poisoned ghosts — and only you know which is which. Capture wisely, then slip a good ghost across the board.</p>
@@ -218,27 +169,7 @@
 
     <!-- Colonist -->
     <a class="game" href="https://simple-games-dev.github.io/colonist/" data-t="strategy" data-name="Colonist">
-      <div class="art" style="background:radial-gradient(circle at 50% 120%,#5a3512,#122A46 70%)">
-        <svg viewBox="0 0 320 170" aria-hidden="true">
-          <g stroke="#0B1E33" stroke-width="2.5" stroke-linejoin="round">
-            <path id="hx" d="M110 40l26 15v30l-26 15-26-15V55z" fill="#4c9a4f"/>
-            <path d="M162 40l26 15v30l-26 15-26-15V55z" fill="#d9b44a" transform="translate(0 0)"/>
-            <path d="M214 40l26 15v30l-26 15-26-15V55z" fill="#b5502f"/>
-            <path d="M84 85l26 15v30l-26 15-26-15v-30z" fill="#8a8f96" transform="translate(26 0)"/>
-            <path d="M136 85l26 15v30l-26 15-26-15v-30z" fill="#7bbf5a" transform="translate(26 0)"/>
-            <path d="M188 85l26 15v30l-26 15-26-15v-30z" fill="#4c9a4f" transform="translate(26 0)"/>
-          </g>
-          <g font-family="Space Grotesk" font-weight="700" font-size="14" text-anchor="middle" fill="#0B1E33">
-            <circle cx="110" cy="70" r="12" fill="#F2EEE2"/><text x="110" y="75">8</text>
-            <circle cx="162" cy="70" r="12" fill="#F2EEE2"/><text x="162" y="75" fill="#c4382f">6</text>
-            <circle cx="214" cy="70" r="12" fill="#F2EEE2"/><text x="214" y="75">5</text>
-            <circle cx="136" cy="115" r="12" fill="#F2EEE2"/><text x="136" y="120">9</text>
-            <circle cx="188" cy="115" r="12" fill="#F2EEE2"/><text x="188" y="120">4</text>
-          </g>
-          <path d="M136 52l8-8 8 8v8h-16z" fill="#E1604A" stroke="#0B1E33" stroke-width="2"/>
-          <path d="M214 98l-18 4" stroke="#5DADE2" stroke-width="5" stroke-linecap="round"/>
-        </svg>
-      </div>
+      <div class="art"><img src="images/colonist.jpg" alt="Colonist hex board" width="1312" height="784" loading="lazy"></div>
       <div class="body">
         <div class="title-row"><h2>Colonist</h2><span class="players"><svg viewBox="0 0 16 16"><circle cx="8" cy="5" r="3"/><path d="M2 14c0-3 3-5 6-5s6 2 6 5z"/></svg>2–4</span></div>
         <p>Settle the island. Roll for resources, trade with friends, build roads and cities, and out-race everyone to 10 points.</p>
@@ -249,21 +180,7 @@
 
     <!-- Chess -->
     <a class="game" href="https://simple-games-dev.github.io/chess/" data-t="classic strategy" data-name="Tempo Chess">
-      <div class="art" style="background:radial-gradient(circle at 50% 120%,#2a3f57,#122A46 70%)">
-        <svg viewBox="0 0 320 170" aria-hidden="true">
-          <g>
-            <defs><pattern id="ck" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="20" height="20" fill="#E9E4D8"/><rect x="20" y="20" width="20" height="20" fill="#E9E4D8"/><rect x="20" width="20" height="20" fill="#3b5f82"/><rect y="20" width="20" height="20" fill="#3b5f82"/></pattern></defs>
-            <rect x="200" y="30" width="100" height="100" rx="6" fill="url(#ck)" opacity=".85" stroke="#0B1E33" stroke-width="3"/>
-          </g>
-          <!-- knight -->
-          <path d="M96 138h60v-12c0-6-3-9-6-12 10-8 14-20 10-36-4-14-16-24-32-24l-6-12-10 14c-14 3-24 14-24 28l18-6c4-3 9-2 10 2-8 6-16 14-18 26-2 8-2 14 0 20h-2v12z" fill="#E9E4D8" stroke="#0B1E33" stroke-width="3" stroke-linejoin="round"/>
-          <circle cx="116" cy="68" r="3.5" fill="#0B1E33"/>
-          <rect x="88" y="138" width="76" height="10" rx="4" fill="#E8A33D" stroke="#0B1E33" stroke-width="3"/>
-          <!-- clock -->
-          <circle cx="262" cy="42" r="22" fill="#0B1E33" stroke="#E8A33D" stroke-width="3"/>
-          <path d="M262 28v14l10 6" stroke="#E8A33D" stroke-width="3" fill="none" stroke-linecap="round"/>
-        </svg>
-      </div>
+      <div class="art"><img class="fit" src="images/chess.jpg" alt="Tempo Chess knight and clock" width="1312" height="784" loading="lazy"></div>
       <div class="body">
         <div class="title-row"><h2>Tempo Chess</h2><span class="players"><svg viewBox="0 0 16 16"><circle cx="8" cy="5" r="3"/><path d="M2 14c0-3 3-5 6-5s6 2 6 5z"/></svg>2</span></div>
         <p>The classic, with the clock running. Online or over the board, with premoves, move highlights and a sudden-death finish.</p>
